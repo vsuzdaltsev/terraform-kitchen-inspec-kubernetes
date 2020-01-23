@@ -20,9 +20,9 @@ RUN chmod u+x kubectl && mv kubectl /bin/kubectl
 
 ADD https://releases.hashicorp.com/terraform/${TF_VERSION}/terraform_${TF_VERSION}_linux_amd64.zip .
 
-RUN unzip terraform_${TF_VERSION}_linux_amd64.zip && mv terraform /usr/local/bin/ \
-  && rm terraform_${TF_VERSION}_linux_amd64.zip \
-  && rm -rf /tmp/* /var/tmp/*
+RUN unzip terraform_${TF_VERSION}_linux_amd64.zip && mv terraform /usr/local/bin/ && \
+  rm terraform_${TF_VERSION}_linux_amd64.zip && \
+  rm -rf /tmp/* /var/tmp/*
 
 RUN bundle exec gem install train-kubernetes && inspec plugin install train-kubernetes && sed -ie 's#"= 0#"0#g' /root/.inspec/plugins.json
 

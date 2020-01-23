@@ -5,7 +5,7 @@ docker run -it vsuzdaltsev/terrafrom-kitchen-inspec-k8s:latest bash
 ```
 Supports the following transports:
 ```
-inspec exec -t <k8s_profile>   k8s://   
-inspec exec -t <local_profile> local://   
-inspec exec -t <ssh_profile>   ssh://   
-inspec exec -t <aws_profile>   aws://
+inspec exec <k8s_profile>   -t k8s://   
+inspec exec <local_profile> -t local://   
+inspec exec <ssh_profile>   -t ssh://   
+inspec exec <aws_profile>   -t aws://

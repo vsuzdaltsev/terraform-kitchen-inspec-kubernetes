@@ -8,9 +8,6 @@ branches:
   only:
   - master
 
-before_install:
-  - docker build -t vsuzdaltsev/terraform-kitchen-inspec-k8s .
-
 sudo: required
 services:
   - docker

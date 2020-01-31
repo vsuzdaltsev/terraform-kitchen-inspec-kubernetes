@@ -1,9 +1,0 @@
-{
-  "plugins_config_version": "1.0.0",
-  "plugins": [
-    {
-      "name": "train-kubernetes",
-      "version": "0.1.3"
-    }
-  ]
-}

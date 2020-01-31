@@ -3,7 +3,7 @@ LABEL maintainer="vsuzdaltsev"
 
 ENV CHEF_LICENSE="accept-silent"
 
-ARG TF_VERSION=0.12.19
+ARG TF_VERSION=0.12.20
 ARG KUBE_RELEASE=1.15.1
 
 RUN mkdir -p /root/.kube

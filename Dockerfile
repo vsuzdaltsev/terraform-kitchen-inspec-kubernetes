@@ -29,6 +29,5 @@ RUN bundle exec gem install train-kubernetes
 
 RUN inspec plugin install train-kubernetes
 
-COPY train_kubernetes_plugin.json ./.inspec/plugins.json
-
+COPY train_kubernetes_plugin.json /root/.inspec/plugins.json
 WORKDIR /root

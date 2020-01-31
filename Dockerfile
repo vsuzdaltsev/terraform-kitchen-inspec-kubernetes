@@ -18,7 +18,7 @@ RUN apk add --update build-base libxml2-dev libffi-dev git openssh-client bash c
   apk del build-base && bundle exec gem uninstall mixlib-shellout -v 3.0.9
 
 RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/v${KUBE_RELEASE}/bin/linux/amd64/kubectl
-RUN chmod u+x kubectl && mv kubectl /bin/kubectl
+RUN chmod u+x kubectl && mv kubectl /usr/local/bin/kubectl
 
 ADD https://releases.hashicorp.com/terraform/${TF_VERSION}/terraform_${TF_VERSION}_linux_amd64.zip .
 
@@ -26,6 +26,11 @@ RUN unzip terraform_${TF_VERSION}_linux_amd64.zip && mv terraform /usr/local/bin
   rm terraform_${TF_VERSION}_linux_amd64.zip && \
   rm -rf /tmp/* /var/tmp/*
 
-RUN bundle exec gem install train-kubernetes && inspec plugin install train-kubernetes && sed -ie 's#"= 0#"0#g' /root/.inspec/plugins.json
+RUN bundle exec gem install train-kubernetes 
+RUN inspec plugin install train-kubernetes
+
+COPY kubernetes_train_plugin.json /root/.inspec/plugins.json 
+
+RUN sed -ie 's#"= 0#"0#g' /root/.inspec/plugins.json
 
 WORKDIR /root

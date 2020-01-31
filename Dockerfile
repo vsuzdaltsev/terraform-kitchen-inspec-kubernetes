@@ -26,11 +26,11 @@ RUN unzip terraform_${TF_VERSION}_linux_amd64.zip && mv terraform /usr/local/bin
   rm terraform_${TF_VERSION}_linux_amd64.zip && \
   rm -rf /tmp/* /var/tmp/*
 
-RUN bundle exec gem install train-kubernetes 
-RUN inspec plugin install train-kubernetes
+RUN bundle exec gem install train-kubernetes
+# RUN inspec plugin install train-kubernetes
 
-COPY kubernetes_train_plugin.json /root/.inspec/plugins.json 
+COPY kubernetes_train_plugin.json /root/.inspec/plugins.json
 
-RUN sed -ie 's#"= 0#"0#g' /root/.inspec/plugins.json
+# RUN sed -ie 's#"= 0#"0#g' /root/.inspec/plugins.json
 
 WORKDIR /root

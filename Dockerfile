@@ -13,7 +13,7 @@ COPY Gemfile .
 
 RUN apk add --update build-base libxml2-dev libffi-dev git openssh-client bash curl python python-dev py-pip groff less mailcap jq && \
   bundle install && \
-  pip install --upgrade awscli python-magic && apk -v --purge del py-pip && rm /var/cache/apk/* # && \
+  pip install --upgrade awscli python-magic && apk -v --purge del py-pip && rm /var/cache/apk/* && \
   apk del build-base && bundle exec gem uninstall mixlib-shellout -v 3.0.9
 
 RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/v${KUBE_RELEASE}/bin/linux/amd64/kubectl

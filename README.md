@@ -1,7 +1,7 @@
 # Dokerized env for running inspec tests within kubernetes deployed in AWS
 
 ```
-docker run -it vsuzdaltsev/terrafrom-kitchen-inspec-k8s:latest bash
+docker run -it vsuzdaltsev/terraform-kitchen-inspec-k8s:latest bash
 ```
 Supports the following transports:
 ```

@@ -11,7 +11,7 @@ ENV KUBECONFIG=/root/.kube/config
 
 COPY Gemfile .
 
-RUN apk add --update build-base libxml2-dev libffi-dev git openssh-client bash curl python python-dev py-pip groff less mailcap jq && \
+RUN apk add --update build-base libxml2-dev libffi-dev git openssh-client bash curl python3 python3-dev py-pip groff less mailcap jq && \
   bundle install && \
   pip install --upgrade awscli python-magic && apk -v --purge del py-pip && rm /var/cache/apk/* && \
   bundle exec gem install train-kubernetes && \

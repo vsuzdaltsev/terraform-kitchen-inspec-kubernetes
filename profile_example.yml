@@ -1,0 +1,14 @@
+---
+name: aws
+title: InSpec Profile
+maintainer: vsuzdaltsev@exadel.com
+copyright: exadel
+copyright_email: vsuzdaltsev@exadel.com
+license: proprietary
+summary: Test compliance profile
+version: 0.1.0
+supports:
+  platform: aws
+depends:
+  - name: inspec-aws
+    url: https://github.com/inspec/inspec-aws/archive/v1.6.3.tar.gz

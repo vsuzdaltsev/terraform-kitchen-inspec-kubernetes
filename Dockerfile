@@ -1,6 +1,8 @@
 FROM ruby:2.6-alpine
 LABEL maintainer="vsuzdaltsev"
 
+WORKDIR /root
+
 ENV CHEF_LICENSE="accept-silent"
 
 ARG TF_VERSION=0.12.20
@@ -30,5 +32,3 @@ RUN unzip terraform_${TF_VERSION}_linux_amd64.zip && mv terraform /usr/local/bin
   rm -rf /tmp/* /var/tmp/*
 
 COPY profile_example.yml .
-
-WORKDIR /root

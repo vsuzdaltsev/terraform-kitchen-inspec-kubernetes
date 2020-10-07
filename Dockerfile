@@ -29,6 +29,6 @@ RUN unzip terraform_${TF_VERSION}_linux_amd64.zip && mv terraform /usr/local/bin
   rm terraform_${TF_VERSION}_linux_amd64.zip && \
   rm -rf /tmp/* /var/tmp/*
 
-RUN profile_example.yml .
+COPY profile_example.yml .
 
 WORKDIR /root

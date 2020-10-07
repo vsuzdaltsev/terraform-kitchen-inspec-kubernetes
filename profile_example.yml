@@ -1,10 +1,10 @@
 ---
 name: aws
 title: InSpec Profile
-maintainer: vsuzdaltsev@exadel.com
+maintainer: suzdaltsev_v@mail.ru
 copyright: exadel
-copyright_email: vsuzdaltsev@exadel.com
-license: proprietary
+copyright_email: suzdaltsev_v@mail.ru
+license: MIT
 summary: Test compliance profile
 version: 0.1.0
 supports:

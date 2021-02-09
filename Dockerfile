@@ -18,7 +18,7 @@ RUN apk add --update build-base libxml2-dev libffi-dev git openssh-client bash c
   pip install --upgrade awscli python-magic && apk -v --purge del py-pip && rm /var/cache/apk/* && \
   bundle exec gem install train-kubernetes && \
   inspec plugin install train-kubernetes && \
-  apk del build-base && bundle exec gem uninstall mixlib-shellout -v 3.0.9
+  apk del build-base && bundle exec gem uninstall mixlib-shellout -v 3.0.9 && rm -fr /tmp/*
 
 COPY train_kubernetes_plugin.json /root/.inspec/plugins.json
 

@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
-ruby "2.6"
+ruby '2.7'
+
 source 'https://rubygems.org/' do
   gem 'inspec',            '4.26.4'
   gem 'inspec-bin',        '4.26.4'
